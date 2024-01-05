@@ -52,12 +52,12 @@ span{
 
 .move-up {
   transform: translateX(-200vh);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 
 .move-down {
   transform: translateX(200vh);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 
 
