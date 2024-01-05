@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;1,100;1,400;1,500&display=swap');
+
 body{
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #0a1c21;
   color: white;
+  caret-color: transparent;
 }
 
 .header{
@@ -50,15 +53,117 @@ span{
 }
 
 
-.move-up {
+.move-left {
   transform: translateX(-200vh);
   transition: transform 0.7s ease-in-out;
 }
 
-.move-down {
+.move-right {
   transform: translateX(200vh);
   transition: transform 0.7s ease-in-out;
 }
+
+.move-input-down{
+  animation: slideInInput 1.6s ease-in;
+}
+
+.move-output-up{
+  animation: slideInOutput 1.6s ease-in;
+}
+
+
+.hidden{
+  display: none;
+}
+
+input:focus{
+   outline:none;
+}
+
+input:focus::placeholder{
+  color: transparent;
+}
+
+input::placeholder{
+  color: #22baa6;
+}
+
+.userInput{
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  position: absolute;
+  top:  30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(30, 30, 30);
+  font-size: 25px;
+  color: white;
+  width: 40vh;
+  height: 6vh;
+  border: 2px solid #1ce9ce;
+  border-radius: 10px;
+}
+.output{
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  top: 70vh;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(30, 30, 30);
+  font-size: 25px;
+  color: white;
+  width: 40vh;
+  height: 6vh;
+  border: 2px solid #1ce9ce;
+  border-radius: 10px;
+}
+
+
+.options-bar {
+  display: flex;
+}
+
+.option {
+  font-family: 'Poppins', sans-serif;
+  width: 60px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: 2px solid #1ce9ce;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.option:nth-child(1) {
+  left: calc(50% - 12%);
+}
+
+.option:nth-child(2) {
+  left: calc(50%);
+}
+
+.option:nth-child(3) {
+  left: calc(50% + 12%);
+}
+
+.option:hover {
+  background-color: #1ce9ce;
+  color: #0a1c21;
+}
+
+.selectedOption{
+  background-color: #1ce9ce;
+}
+
+
+.move-option-right{
+  animation: slideInOption 2s ease-in;
+}
+
+
 
 
 @keyframes slideInButton {
@@ -76,5 +181,111 @@ span{
   }
   to {
     margin-top: 20vh;
+  }
+}
+
+@keyframes slideInInput{
+  from{
+    top: -140vh;
+  }
+  to{
+    top: 30vh;
+  }
+}
+
+@keyframes slideInOutput{
+  from{
+    top:  140vh;
+  }
+  to{
+    top: 70vh;
+  }
+}
+
+
+@keyframes slideInOption {
+  from{
+    left: -140%;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+
+
+/* SUPPORTS FOR SMALLER DEVICES */
+@media (max-width: 1030px) {
+  h1{
+  font-size: 3rem;
+}
+
+span{
+  font-size: 3.5rem;
+}
+
+.option:nth-child(1) {
+  left: calc(50% - 15%);
+}
+
+.option:nth-child(2) {
+  left: calc(50%);
+}
+
+.option:nth-child(3) {
+  left: calc(50% + 15%);
+}
+
+}
+
+
+@media (max-width: 480px) {
+  h1{
+  font-size: 1rem;
+}
+
+span{
+  font-size: 1.5rem;
+}
+
+.option:nth-child(1) {
+  left: calc(50% - 30%);
+}
+
+.option:nth-child(2) {
+  left: calc(50%);
+}
+
+.option:nth-child(3) {
+  left: calc(50% + 30%);
+}
+
+}
+
+@media (max-width: 350px) {
+  h1{
+    font-size: 0.7rem;
+  }
+
+  span{
+    font-size: 1.3rem;
+  }
+
+  .option:nth-child(1) {
+    width: 3vh;
+    font-size: 0.7rem;
+    left: calc(50% - 30%);
+  }
+
+  .option:nth-child(2) {
+    width: 3vh;
+    font-size: 0.7rem;
+    left: calc(50%);
+  }
+
+  .option:nth-child(3) {
+    width: 3vh;
+    font-size: 0.7rem;
+    left: calc(50% + 30%);
   }
 }

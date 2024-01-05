@@ -9,9 +9,20 @@
 </head>
 <body>
   <div class="header">
-    <h1><span>Convert</span> between <span>Currencies</span> with<span> Ease</span></h1>
+    <h1><span>Convert</span> between <span>Currencies</span> with<span> Ea$e</span></h1>
   </div>
   <button class="startButton" onclick="moveStarterElements()">Get Started</button>
+
+  <div class="currencyInputContainer hidden">
+    <input class="userInput" placeholder="Enter Amount">
+    <input class="output">
+  </div>
+
+  <div class="options-bar hidden">
+    <div class="option hidden" onclick="handleOptionClick('op1')">British</div>
+    <div class="option hidden" onclick="handleOptionClick('op2')">Dollar</div>
+    <div class="option hidden" onclick="handleOptionClick('op3')">Euro</div>
+  </div>
 
   <script src="script.js"></script>
 </body>
