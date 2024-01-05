@@ -1,0 +1,80 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a1c21;
+  color: white;
+}
+
+.header{
+  user-select: none;
+  margin-top: -200vh;
+  animation: slideInHeader 1.3s ease-out forwards;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+
+h1{
+  font-size: 3rem;
+}
+
+span{
+  font-size: 3.4rem;
+  color: #1ce9ce;
+}
+
+.startButton{
+  color: white;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+  background-color: #1ce9ce;
+  width: 25vh;
+  height: 6vh;
+  border-radius: 10px;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideInButton 2s ease-in;
+  transition: all 0.2s ease;
+}
+
+.startButton:hover{
+  width: 30vh;
+  height: 8vh;
+  background-color: #22baa6;
+}
+
+
+.move-up {
+  transform: translateX(-200vh);
+  transition: transform 0.5s ease-in-out;
+}
+
+.move-down {
+  transform: translateX(200vh);
+  transition: transform 0.5s ease-in-out;
+}
+
+
+@keyframes slideInButton {
+  from {
+    top: 140vh;
+  }
+  to {
+    top: 50vh;
+  }
+}
+
+@keyframes slideInHeader {
+  from {
+    margin-top: -100vh;
+  }
+  to {
+    margin-top: 20vh;
+  }
+}
